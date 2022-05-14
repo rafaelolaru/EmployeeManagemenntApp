@@ -28,7 +28,9 @@ public class UserService {
             File file=new File(String.valueOf(USERS_PATH.toFile()));
             FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("users.json"), USERS_PATH.toFile());
         }
-        System.out.println(USERS_PATH);
+
+        System.out.println(USERS_PATH);//shows path for json
+
         ObjectMapper objectMapper = new ObjectMapper();
 
         users = objectMapper.readValue(USERS_PATH.toFile(), new TypeReference<List<User>>() {
@@ -41,11 +43,20 @@ public class UserService {
         persistUsers();
     }
 
-    private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
+    public static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
         for (User user : users) {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExistsException(username);
         }
+    }
+    public static boolean checkPasswordForUser(String username,String password){
+        password=encodePassword(username,password);
+        for (User user : users) {
+            if (Objects.equals(username, user.getUsername()))
+                if(Objects.equals(password,user.getPassword()))
+                    return true;
+        }
+        return false;
     }
 
     private static void persistUsers() {
