@@ -47,4 +47,19 @@ public class RegistrationController {
             registrationMessage.setText(e.getMessage());
         }
     }
+
+    @FXML
+    public void handleGoBackAction(javafx.event.ActionEvent actionEvent){
+        try {
+            registrationMessage.setText("Account created successfully!");
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            registrationMessage.setText(e.getMessage());
+        }
+    }
+
 }

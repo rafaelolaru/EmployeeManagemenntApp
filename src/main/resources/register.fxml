@@ -40,8 +40,9 @@
 
     <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
     <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="12">
-        <Button onAction="#handleRegisterAction" text="Register" />
+      <Button onAction="#handleRegisterAction" text="Register" />
     </HBox>
+     <Button onAction="#handleGoBackAction" text="Go back" GridPane.rowIndex="12" />
 
    <columnConstraints>
       <ColumnConstraints />
