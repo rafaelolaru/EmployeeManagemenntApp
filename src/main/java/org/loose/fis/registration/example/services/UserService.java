@@ -89,11 +89,20 @@ public class UserService {
         return md;
     }
 
-    public static ArrayList getFullName(String role){
+    public static User getUsername(String name){
+        for (User user : users) {
+            if (Objects.equals(name, user.getUsername()))
+                return user;
+        }
+        return null;
+
+    }
+
+    public static ArrayList getFullName(String role,String code){
 
         ArrayList nameList=new ArrayList(users.size());
         for(User user : users){
-            if(role.equals(user.getRole()))
+            if(role.equals(user.getRole())&&code.equals(user.getCode()))
                 nameList.add(user.getFull_name());
         }
         Collections.sort(nameList);
@@ -106,6 +115,22 @@ public class UserService {
         }
         return null;
     }
+
+    public static boolean checkCode(String code) {
+        for (User user : users) {
+            if (Objects.equals(code, user.getCode()))
+                return true;
+        }
+        return false;
+    }
+    public static void setCode(User userCode) {
+        for (User user : users) {
+            if (Objects.equals(userCode.getUsername(), user.getUsername()))
+                user.setCode(userCode.getCode());
+        }
+        persistUsers();
+    }
+
 
 
 }
