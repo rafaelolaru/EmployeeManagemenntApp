@@ -7,6 +7,7 @@ import org.loose.fis.registration.example.exceptions.CouldNotWriteUsersException
 import org.loose.fis.registration.example.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.registration.example.model.User;
 
+import javax.jws.soap.SOAPBinding;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -48,6 +49,13 @@ public class UserService {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExistsException(username);
         }
+    }
+    public static User checkAdmin(String code) {
+        for (User user : users) {
+            if (Objects.equals("Admin", user.getRole()) && Objects.equals(code, user.getCode()))
+               return user;
+        }
+        return null;
     }
     public static boolean checkPasswordForUser(String username,String password){
         password=encodePassword(username,password);

@@ -1,5 +1,7 @@
 package org.loose.fis.registration.example.model;
 
+import org.loose.fis.registration.example.complaints.Complaints;
+
 public class User {
 
     private String username;
@@ -7,6 +9,7 @@ public class User {
     private String role;
     private String full_name;
     private String phone;
+    private Complaints complaints = new Complaints("orice");
     private int salary=0,hours=0;
 
     public User() {
@@ -101,6 +104,8 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", salary='" + salary + '\'' +
                 ", hours='" + hours + '\'' +
+                ", complaints='" + complaints.toString() + '\'' +
                 '}';
+
     }
 }
