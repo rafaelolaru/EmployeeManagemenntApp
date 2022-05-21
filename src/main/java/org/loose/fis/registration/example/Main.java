@@ -31,7 +31,7 @@ public class Main extends Application {
             UserService.loadUsersFromFile();
 
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
-            primaryStage.setTitle("Registration Example");
+            primaryStage.setTitle("Employee Management");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
         }catch (Exception e){
