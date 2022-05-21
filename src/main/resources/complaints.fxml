@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.registration.example.controllers.ComplaintsController">
+   <children>
+      <BorderPane layoutX="115.0" layoutY="73.0" prefHeight="254.0" prefWidth="369.0">
+         <center>
+            <TextArea fx:id="textComplaints" prefHeight="224.0" prefWidth="302.0" promptText="Please write your complaints here" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+      <Button layoutX="232.0" layoutY="337.0" mnemonicParsing="false" onAction="#onSubmit" text="Submit" textFill="#2e2d2d" />
+      <Button layoutX="308.0" layoutY="337.0" mnemonicParsing="false" text="Cancel" />
+   </children>
+</AnchorPane>
