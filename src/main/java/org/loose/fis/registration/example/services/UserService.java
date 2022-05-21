@@ -2,6 +2,7 @@ package org.loose.fis.registration.example.services;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.collections.ObservableList;
 import org.apache.commons.io.FileUtils;
 import org.loose.fis.registration.example.exceptions.CouldNotWriteUsersException;
 import org.loose.fis.registration.example.exceptions.UsernameAlreadyExistsException;
@@ -15,12 +16,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class UserService {
 
-    private static List<User> users;
+    public static List<User> users;
     private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
 
     public static void loadUsersFromFile() throws IOException {
@@ -96,6 +96,49 @@ public class UserService {
         }
         return md;
     }
+
+    public static User getUsername(String name){
+        for (User user : users) {
+            if (Objects.equals(name, user.getUsername()))
+                return user;
+        }
+        return null;
+
+    }
+
+    public static ArrayList getFullName(String role,String code){
+
+        ArrayList nameList=new ArrayList(users.size());
+        for(User user : users){
+            if(role.equals(user.getRole())&&code.equals(user.getCode()))
+                nameList.add(user.getFull_name());
+        }
+        Collections.sort(nameList);
+        return nameList;
+    }
+    public static User checkUserFullName(String Name){
+        for (User user : users) {
+            if (Objects.equals(Name, user.getFull_name()))
+                return user;
+        }
+        return null;
+    }
+
+    public static boolean checkCode(String code) {
+        for (User user : users) {
+            if (Objects.equals(code, user.getCode()))
+                return true;
+        }
+        return false;
+    }
+    public static void setCode(User userCode) {
+        for (User user : users) {
+            if (Objects.equals(userCode.getUsername(), user.getUsername()))
+                user.setCode(userCode.getCode());
+        }
+        persistUsers();
+    }
+
 
 
 }

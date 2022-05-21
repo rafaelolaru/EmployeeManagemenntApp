@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.DropdownButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<GridPane alignment="center" hgap="10" prefHeight="300.0" prefWidth="350.0" vgap="10" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.registration.example.controllers.LogInController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="300.0" prefWidth="350.0">
+         <children>
+            <Label layoutX="128.0" layoutY="65.0" prefHeight="18.0" prefWidth="94.0" text="Add a transaction" />
+            <TextField layoutX="174.0" layoutY="94.0" prefHeight="26.0" prefWidth="94.0" />
+            <TextField layoutX="174.0" layoutY="137.0" prefHeight="26.0" prefWidth="94.0" />
+            <Label layoutX="34.0" layoutY="98.0" prefHeight="18.0" prefWidth="94.0" text="Transaction sum" />
+            <Label layoutX="34.0" layoutY="141.0" prefHeight="18.0" prefWidth="94.0" text="Transaction Date" />
+            <DropdownButton layoutX="268.0" layoutY="163.0">
+                <items>
+                    <MenuItem text="Ianuarie" />
+                    <MenuItem text="Februarie" />
+                    <MenuItem text="Martie" />
+                  <MenuItem text="Aprilie" />
+                  <MenuItem text="Mai" />
+                  <MenuItem text="Iunie" />
+                  <MenuItem text="Iulie" />
+                  <MenuItem text="August" />
+                  <MenuItem text="Septembrie" />
+                  <MenuItem text="Octombrie" />
+                  <MenuItem text="Noiembrie" />
+                  <MenuItem text="Decembrie" />
+                </items>
+            </DropdownButton>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>

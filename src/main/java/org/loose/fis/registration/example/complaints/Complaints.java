@@ -3,7 +3,6 @@ package org.loose.fis.registration.example.complaints;
 public class Complaints {
     private String message;
 
-
     public String getMessage() {
         return message;
     }
