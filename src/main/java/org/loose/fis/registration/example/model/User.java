@@ -11,6 +11,7 @@ public class User {
     private String phone;
     private Complaints complaints = new Complaints("orice");
     private int salary=0,hours=0;
+    private String code=null;
 
     public User() {
     }
@@ -73,6 +74,10 @@ public class User {
 
     public void setHours(int hours){this.hours=hours;}
 
+    public String getCode(){return code;}
+
+    public void setCode(String code){this.code=code;}
+
 
     @Override
     public boolean equals(Object o) {
@@ -105,6 +110,7 @@ public class User {
                 ", salary='" + salary + '\'' +
                 ", hours='" + hours + '\'' +
                 ", complaints='" + complaints.toString() + '\'' +
+                ", code='" + code + '\'' +
                 '}';
 
     }
