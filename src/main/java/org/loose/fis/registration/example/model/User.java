@@ -7,8 +7,10 @@ public class User {
     private String role;
     private String full_name;
     private String phone;
+    public Transaction transaction = new Transaction(15,3,4);
     private int salary=0,hours=0;
     private String code=null;
+
 
     public User() {
     }
@@ -107,6 +109,7 @@ public class User {
                 ", salary='" + salary + '\'' +
                 ", hours='" + hours + '\'' +
                 ", code='" + code + '\'' +
+                ", transaction='" + transaction.toString() + '\'' +
                 '}';
     }
 }
