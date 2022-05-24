@@ -41,7 +41,7 @@ public class GetSalariesController {
                 sum += transaction.getPayment();
             }
         }
-        salariesLabel.setText("Total sum salaries between those two dates is + " + sum);
+        salariesLabel.setText(String.valueOf(sum));
         salariesLabel.setVisible(true);
     }
 
@@ -59,7 +59,7 @@ public class GetSalariesController {
                 sum += transaction.getPayment();
             }
         }
-        salariesLabel.setText("Total sum salaries between those two dates is + " + sum);
+        salariesLabel.setText(String.valueOf(sum));
         salariesLabel.setVisible(true);
     }
 }

@@ -9,6 +9,10 @@ public class Transaction {
     private int month;
     private boolean salary;
 
+    public Transaction(){
+
+    }
+
     public Transaction(float payment, int day, int month, boolean salary) {
         this.payment = payment;
         this.day = day;
@@ -28,9 +32,7 @@ public class Transaction {
         this.month = month;
     }
 
-    public void setIsSalary(boolean salary){this.salary = salary;};
-
-    public boolean isSalary(){return salary;}
+    public void setSalary(boolean salary){this.salary = salary;};
 
     public float getPayment() {
         return payment;
@@ -44,8 +46,11 @@ public class Transaction {
         return month;
     }
 
+    public boolean getSalary() {return salary;}
 
-    public void verificaDate(Object p) throws ZiInexistenta, LunaInexistenta {
+    public boolean isSalary(){return salary;}
+
+    public void verificaDate() throws ZiInexistenta, LunaInexistenta {
         if(this.month<1 || this.month>12){
             throw new LunaInexistenta("Luna inexistenta");
         }

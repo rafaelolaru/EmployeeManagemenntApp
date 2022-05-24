@@ -21,7 +21,7 @@
       <AnchorPane prefHeight="400.0" prefWidth="600.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
             <Button layoutX="300.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleGetSalaries" prefHeight="25.0" prefWidth="131.0" text="Get salaries" />
-            <Label fx:id="salariesLabel" layoutX="78.0" layoutY="230.0" prefHeight="86.0" prefWidth="498.0" text="Stub text for total salaries" />
+            <Label fx:id="salariesLabel" layoutX="206.0" layoutY="230.0" prefHeight="86.0" prefWidth="241.0" text="Stub text for total salaries" />
             <TextField fx:id="startDayTF" layoutX="138.0" layoutY="77.0" />
             <TextField fx:id="startMonthTF" layoutX="138.0" layoutY="133.0" />
             <Label layoutX="56.0" layoutY="81.0" text="Starting day" />
