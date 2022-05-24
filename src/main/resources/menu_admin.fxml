@@ -11,12 +11,13 @@
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
     </padding>
-    <Button fx:id="exitButton" onAction="#handleExitAction" prefHeight="64.0" prefWidth="160.0" text="Exit" GridPane.rowIndex="16" />
+    <Button fx:id="exitButton" onAction="#handleExitAction" prefHeight="64.0" prefWidth="160.0" text="Exit" GridPane.rowIndex="17" />
    <Button fx:id="browseButton" onAction="#handleBrowseAction" prefHeight="64.0" prefWidth="160.0" text="Browse Employees">
       <font>
          <Font size="14.0" />
       </font>
    </Button>
+   <Button mnemonicParsing="false" onAction="#checkComplaints" prefHeight="60.0" prefWidth="160.0" text="Check Complaints" GridPane.rowIndex="3" />
 
     <columnConstraints>
         <ColumnConstraints />
@@ -42,6 +43,7 @@
         <RowConstraints />
         <RowConstraints />
         <RowConstraints />
+      <RowConstraints />
       <RowConstraints />
       <RowConstraints />
     </rowConstraints>

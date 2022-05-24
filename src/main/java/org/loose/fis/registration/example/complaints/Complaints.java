@@ -3,7 +3,6 @@ package org.loose.fis.registration.example.complaints;
 public class Complaints {
     private String message;
 
-
     public String getMessage() {
         return message;
     }
@@ -16,6 +15,8 @@ public class Complaints {
 
     }
     public Complaints(){}
+
+
     @Override
     public String toString() {
         return "UserDTO{" +
