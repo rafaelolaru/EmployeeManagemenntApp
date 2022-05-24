@@ -5,17 +5,24 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" prefHeight="400" prefWidth="600" vgap="10" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.registration.example.controllers.ClientMenuController">
+<GridPane alignment="center" hgap="10" prefHeight="400" prefWidth="600" styleClass="menu" stylesheets="@backgrounds/StyleSheets.css" vgap="10" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.registration.example.controllers.ClientMenuController">
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
     </padding>
-    <Button fx:id="exitButton" onAction="#handleExitAction" prefHeight="64.0" prefWidth="160.0" text="Exit" GridPane.rowIndex="16" />
+    <Button fx:id="exitButton" onAction="#handleExitAction" prefHeight="64.0" prefWidth="160.0" text="Exit" GridPane.columnIndex="1" GridPane.rowIndex="20" />
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints />
         <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
     </columnConstraints>
     <rowConstraints>
         <RowConstraints />
@@ -38,5 +45,9 @@
         <RowConstraints />
         <RowConstraints />
         <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
     </rowConstraints>
 </GridPane>
