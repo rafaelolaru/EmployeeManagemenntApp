@@ -25,7 +25,7 @@ public class AdminMenuController extends LogInController{
     public void handleAddTransactionAction(javafx.event.ActionEvent actionEvent){
         try {
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("add_transaction.fxml"));
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(root,700,800);
             Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();

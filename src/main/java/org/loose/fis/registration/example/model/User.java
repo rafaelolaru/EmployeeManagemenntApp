@@ -7,9 +7,7 @@ public class User {
     private String role;
     private String full_name;
     private String phone;
-    public Transaction transaction = new Transaction(15,3,4);
-    private int salary=0,hours=0;
-    private String code=null;
+    private String code="hellokitty";
 
 
     public User() {
@@ -65,14 +63,6 @@ public class User {
         this.phone = phone;
     }
 
-    public int getSalary(){return salary;}
-
-    public void setSalary(int salary){this.salary=salary;}
-
-    public int getHours(){return hours;}
-
-    public void setHours(int hours){this.hours=hours;}
-
     public String getCode(){return code;}
 
     public void setCode(String code){this.code=code;}
@@ -106,10 +96,7 @@ public class User {
                 ", role='" + role + '\'' +
                 ", full name='" + full_name + '\'' +
                 ", phone='" + phone + '\'' +
-                ", salary='" + salary + '\'' +
-                ", hours='" + hours + '\'' +
                 ", code='" + code + '\'' +
-                ", transaction='" + transaction.toString() + '\'' +
                 '}';
     }
 }

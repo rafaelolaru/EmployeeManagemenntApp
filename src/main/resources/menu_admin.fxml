@@ -17,7 +17,7 @@
          <Font size="14.0" />
       </font>
    </Button>
-   <Button fx:id="browseButton1" onAction="#handleAddTransactionAction" prefHeight="96.0" prefWidth="160.0" text="Browse Employees" GridPane.rowIndex="5">
+   <Button fx:id="addTransactionButton" onAction="#handleAddTransactionAction" prefHeight="96.0" prefWidth="160.0" text="Add Transaction" GridPane.rowIndex="5">
       <font>
          <Font size="14.0" />
       </font>
