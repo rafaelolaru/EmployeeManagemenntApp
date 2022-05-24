@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" prefHeight="300.0" prefWidth="350.0" vgap="10" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.registration.example.controllers.TransactionMenuController">
+<GridPane alignment="center" hgap="10" prefHeight="700.0" prefWidth="700.0" vgap="10" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.registration.example.controllers.TransactionMenuController">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>

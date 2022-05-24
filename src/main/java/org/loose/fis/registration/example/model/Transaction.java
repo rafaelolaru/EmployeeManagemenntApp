@@ -7,11 +7,13 @@ public class Transaction {
     private float payment;
     private int day;
     private int month;
+    private boolean salary;
 
-    public Transaction(float payment, int day, int month) {
+    public Transaction(float payment, int day, int month, boolean salary) {
         this.payment = payment;
         this.day = day;
         this.month = month;
+        this.salary = salary;
     }
 
     public void setPayment(float payment) {
@@ -26,6 +28,10 @@ public class Transaction {
         this.month = month;
     }
 
+    public void setIsSalary(boolean salary){this.salary = salary;};
+
+    public boolean isSalary(){return salary;}
+
     public float getPayment() {
         return payment;
     }
@@ -37,6 +43,8 @@ public class Transaction {
     public int getMonth() {
         return month;
     }
+
+
     public void verificaDate(Object p) throws ZiInexistenta, LunaInexistenta {
         if(this.month<1 || this.month>12){
             throw new LunaInexistenta("Luna inexistenta");
@@ -103,15 +111,6 @@ public class Transaction {
         }
         throw new ZiInexistenta(" Zi inexistenta");
     }
-    /*
-    @Override
-    public String toString(){
-        return "UserDTO{" +
-                "username='" + month + '\'' +
-                ", password='" + day + '\'' +
-                ", role='" + payment + '\'' +
-                '}';
-    }*/
 
     @Override
     public String toString() {
@@ -119,6 +118,7 @@ public class Transaction {
                 "payment=" + payment +
                 ", day=" + day +
                 ", month=" + month +
+                ", salary=" + salary +
                 '}';
     }
 }
