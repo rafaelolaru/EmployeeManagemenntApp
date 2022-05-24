@@ -7,7 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
-import org.loose.fis.registration.example.model.User;
+import org.loose.fis.registration.example.complaints.Complaints;
 import org.loose.fis.registration.example.services.UserService;
 
 
@@ -16,10 +16,7 @@ public class ComplaintsController extends LogInController {
     TextArea textComplaints;
     public void onSubmit(javafx.event.ActionEvent actionEvent){
 
-       User user1 = UserService.checkAdmin(selectedUser.getCode());
-       user1.complaints.setMessage(textComplaints.getText());
-       UserService.setCode(user1);
-        System.out.println(textComplaints.getText());
+        UserService.setComplaints(selectedUser,new Complaints(textComplaints.getText()));
 
         try {
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("menu_client.fxml"));
@@ -47,4 +44,3 @@ public class ComplaintsController extends LogInController {
     }
 
 }
-

@@ -25,4 +25,17 @@ public class AdminMenuController extends LogInController{
         System.exit(1);
     }
 
+    @FXML
+    public void checkComplaints(javafx.event.ActionEvent actionEvent){
+        try {
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("browseComplaints.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception e2){
+            e2.printStackTrace();}
+
+    }
+
 }

@@ -9,7 +9,7 @@ public class User {
     private String role;
     private String full_name;
     private String phone;
-    public Complaints complaints = new Complaints("orice");
+    public Complaints complaints;
     private int salary=0,hours=0;
     private String code=null;
 
@@ -79,7 +79,7 @@ public class User {
     public void setCode(String code){this.code=code;}
 
     public Complaints getComplaints(){return complaints;}
-    public void setComplaints(){}
+    public void setComplaints(Complaints complaints){this.complaints=complaints;}
 
 
     @Override
