@@ -11,6 +11,6 @@
          </center>
       </BorderPane>
       <Button layoutX="232.0" layoutY="337.0" mnemonicParsing="false" onAction="#onSubmit" text="Submit" textFill="#2e2d2d" />
-      <Button layoutX="308.0" layoutY="337.0" mnemonicParsing="false" text="Cancel" />
+      <Button layoutX="308.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleGoBackAction" text="Cancel" />
    </children>
 </AnchorPane>
