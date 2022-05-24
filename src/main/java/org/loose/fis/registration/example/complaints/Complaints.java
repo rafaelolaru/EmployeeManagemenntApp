@@ -21,7 +21,6 @@ public class Complaints {
     public String toString() {
         return "UserDTO{" +
                 "message='" + message + '\'' +
-
                 '}';
 
     }
