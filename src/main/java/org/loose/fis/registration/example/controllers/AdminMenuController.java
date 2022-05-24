@@ -20,6 +20,19 @@ public class AdminMenuController extends LogInController{
         }catch (Exception e1){
             e1.printStackTrace();}
     }
+
+    @FXML
+    public void handleAddTransactionAction(javafx.event.ActionEvent actionEvent){
+        try {
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("add_transaction.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception e1){
+            e1.printStackTrace();}
+    }
+
     @FXML
     public void handleExitAction(){
         System.exit(1);

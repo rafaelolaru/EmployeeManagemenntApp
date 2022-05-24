@@ -103,11 +103,22 @@ public class Transaction {
         }
         throw new ZiInexistenta(" Zi inexistenta");
     }
-
+    /*
+    @Override
     public String toString(){
-        return "TransactionInfo{"+
-                "Date : "+day + "."+month+"/ "+
-                "Spent : "+ payment+" /"+
-                "}";
+        return "UserDTO{" +
+                "username='" + month + '\'' +
+                ", password='" + day + '\'' +
+                ", role='" + payment + '\'' +
+                '}';
+    }*/
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "payment=" + payment +
+                ", day=" + day +
+                ", month=" + month +
+                '}';
     }
 }
