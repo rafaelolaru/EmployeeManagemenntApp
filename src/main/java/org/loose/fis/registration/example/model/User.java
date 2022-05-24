@@ -1,5 +1,7 @@
 package org.loose.fis.registration.example.model;
 
+import org.loose.fis.registration.example.complaints.Complaints;
+
 public class User {
 
     private String username;
@@ -7,6 +9,7 @@ public class User {
     private String role;
     private String full_name;
     private String phone;
+    public Complaints complaints;
     private int salary=0,hours=0;
     private String code=null;
 
@@ -75,6 +78,9 @@ public class User {
 
     public void setCode(String code){this.code=code;}
 
+    public Complaints getComplaints(){return complaints;}
+    public void setComplaints(Complaints complaints){this.complaints=complaints;}
+
 
     @Override
     public boolean equals(Object o) {
@@ -106,7 +112,9 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", salary='" + salary + '\'' +
                 ", hours='" + hours + '\'' +
+                ", complaints='" + complaints.toString() + '\'' +
                 ", code='" + code + '\'' +
                 '}';
+
     }
 }
