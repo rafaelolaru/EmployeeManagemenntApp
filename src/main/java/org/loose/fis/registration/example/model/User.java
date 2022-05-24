@@ -13,6 +13,7 @@ public class User {
     private int salary=0,hours=0;
     private String code=null;
 
+
     public User() {
     }
     public User(String username, String password, String role) {
@@ -65,14 +66,6 @@ public class User {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-    public int getSalary(){return salary;}
-
-    public void setSalary(int salary){this.salary=salary;}
-
-    public int getHours(){return hours;}
-
-    public void setHours(int hours){this.hours=hours;}
 
     public String getCode(){return code;}
 

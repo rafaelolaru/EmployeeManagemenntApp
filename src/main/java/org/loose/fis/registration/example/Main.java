@@ -6,10 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.loose.fis.registration.example.services.TransactionService;
 import org.loose.fis.registration.example.services.UserService;
 
 import java.net.URL;
-
 public class Main extends Application {
     private Stage primaryStage;
     private Parent root;
@@ -25,6 +25,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             UserService.loadUsersFromFile();
+            TransactionService.loadTransactionsFromFile();
 
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
             primaryStage.setTitle("Employee Management");

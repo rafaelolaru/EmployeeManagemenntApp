@@ -28,8 +28,8 @@ public class TransactionServiceTest extends TestCase {
     @Before
     public void setUp() throws IOException {
         FileUtils.cleanDirectory(FileSystemService.getApplicationHomePath().toFile());
-        TEST_TRANSACTIONS[0]=new Transaction(1,2,3);
-        TEST_TRANSACTIONS[1]=new Transaction(2,3,4);
+        TEST_TRANSACTIONS[0]=new Transaction(1,2,3,true);
+        TEST_TRANSACTIONS[1]=new Transaction(2,3,4,true);
     }
 
     @Test

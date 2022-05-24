@@ -2,6 +2,7 @@ package org.loose.fis.registration.example.controllers;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -46,8 +47,6 @@ public class BrowserController extends AdminMenuController{
                 usernameMessage.setText(client.getUsername());
                 nameMessage.setText(client.getFull_name());
                 phoneMessage.setText(client.getPhone());
-                hoursMessage.setText(String.valueOf(client.getHours()));
-                salaryMessage.setText(String.valueOf(client.getSalary()));
             }
         });
 
