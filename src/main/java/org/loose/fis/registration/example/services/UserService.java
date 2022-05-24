@@ -20,7 +20,7 @@ import java.util.*;
 public class UserService {
 
     public static List<User> users;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
+    public static final Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
 
     public static void loadUsersFromFile() throws IOException {
 
@@ -29,7 +29,6 @@ public class UserService {
             FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("users.json"), USERS_PATH.toFile());
         }
 
-        System.out.println(USERS_PATH);//shows path for json
 
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -59,7 +58,7 @@ public class UserService {
         return false;
     }
 
-    private static void persistUsers() {
+    public static void persistUsers() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), users);
@@ -68,7 +67,7 @@ public class UserService {
         }
     }
 
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 
@@ -131,6 +130,8 @@ public class UserService {
         persistUsers();
     }
 
-
+    public static List<User> getUsers() {
+        return users;
+    }
 
 }

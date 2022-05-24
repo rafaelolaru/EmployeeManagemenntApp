@@ -9,17 +9,24 @@ import javafx.stage.Stage;
 
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import org.loose.fis.registration.example.model.User;
 import org.loose.fis.registration.example.services.UserService;
 
 public class CodeController extends LogInController{
 
     @FXML
-    private Text roleMessage;
+    public Text roleMessage;
     @FXML
-    private TextField codeField;
+    public TextField codeField;
     @FXML
-    private Text codeMessage;
+    public Text codeMessage;
 
+
+    public void setUserCode(String code){
+        selectedUser=new User();
+        selectedUser.setCode(code);
+    }
+    public void setUserRole(String role){selectedUser.setRole(role);}
 
     @FXML
     private void initialize(){
@@ -32,7 +39,7 @@ public class CodeController extends LogInController{
     }
 
     @FXML
-    private void handleInsertAction(javafx.event.ActionEvent actionEvent) {
+    public void handleInsertAction() {
         if (codeField.getText().length() < 6) {
             codeMessage.setText("Code is Too Small");
         } else {
@@ -42,31 +49,17 @@ public class CodeController extends LogInController{
                 else {
                     selectedUser.setCode(codeField.getText());
                     UserService.setCode(selectedUser);
-                    try {
-                        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("menu_admin.fxml"));
-                        Scene scene = new Scene(root);
-                        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                        stage.setScene(scene);
-                        stage.show();
-                    } catch (Exception exc) {
-                        exc.printStackTrace();
-                    }
+                    codeMessage.setText("Code created");
+
                 }
             } else if (selectedUser.getRole().equals("Client")) {
                 if (!(UserService.checkCode(codeField.getText())))
                     codeMessage.setText("Code does not exists");
                 else {
+                    codeMessage.setText("Code found");
                     selectedUser.setCode(codeField.getText());
                     UserService.setCode(selectedUser);
-                    try {
-                        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("menu_client.fxml"));
-                        Scene scene = new Scene(root);
-                        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                        stage.setScene(scene);
-                        stage.show();
-                    } catch (Exception exc) {
-                        exc.printStackTrace();
-                    }
+
                 }
             }
         }
