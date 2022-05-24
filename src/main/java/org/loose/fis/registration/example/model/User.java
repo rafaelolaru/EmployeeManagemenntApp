@@ -9,7 +9,7 @@ public class User {
     private String role;
     private String full_name;
     private String phone;
-    private Complaints complaints = new Complaints("orice");
+    public Complaints complaints = new Complaints("orice");
     private int salary=0,hours=0;
     private String code=null;
 
