@@ -31,6 +31,8 @@ public class BrowserController extends AdminMenuController{
     @FXML
     private ListView listField;
 
+    public static User client;
+    public static String type;
 
     @FXML
     public void initialize()
@@ -42,7 +44,7 @@ public class BrowserController extends AdminMenuController{
         listField.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                User client=UserService.checkUserFullName(listField.getSelectionModel().getSelectedItem().toString());
+                client=UserService.checkUserFullName(listField.getSelectionModel().getSelectedItem().toString());
                 usernameMessage.setText(client.getUsername());
                 nameMessage.setText(client.getFull_name());
                 phoneMessage.setText(client.getPhone());
@@ -65,7 +67,37 @@ public class BrowserController extends AdminMenuController{
         }
     }
 
+    @FXML
+    public void handleSalaryAction(javafx.event.ActionEvent actionEvent){
+        this.type="Salary";
+        if(client!=null) {
+            try {
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Browse_change.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (Exception t1) {
+                t1.printStackTrace();
+            }
+        }
+    }
 
+    @FXML
+    public void handleHoursAction(javafx.event.ActionEvent actionEvent){
+        this.type="Hours";
+        if(client!=null) {
+            try {
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Browse_change.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (Exception t2) {
+                t2.printStackTrace();
+            }
+        }
+    }
 
 
 }

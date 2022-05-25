@@ -158,6 +158,16 @@ public class UserService {
             }
         }
     }
+    public static void setUserValues(User newUser)
+    {
+        for(User user:users){
+            if(newUser.getUsername().equals(user.getUsername())){
+                user.setSalary(newUser.getSalary());
+                user.setHours(newUser.getHours());
+                persistUsers();
+            }
+        }
+    }
 
 
 

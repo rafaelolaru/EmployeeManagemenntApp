@@ -81,6 +81,9 @@ public class User {
     public Complaints getComplaints(){return complaints;}
     public void setComplaints(Complaints complaints){this.complaints=complaints;}
 
+    public void addHours(int newHours){
+        this.hours=this.hours+newHours;
+    }
 
     @Override
     public boolean equals(Object o) {
