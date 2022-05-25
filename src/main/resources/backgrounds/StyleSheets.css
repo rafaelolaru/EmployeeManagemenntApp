@@ -15,3 +15,11 @@
     -fx-background-image: url("images/lists_background.jpg");
     -fx-background-size: 100% 100%;
 }
+.make_com{
+    -fx-background-image: url("images/make_com.jpg");
+    -fx-background-size: 100% 100%;
+}
+.check_com{
+    -fx-background-image: url("images/checkComplaints.jpg");
+    -fx-background-size: 100% 100%;
+}
