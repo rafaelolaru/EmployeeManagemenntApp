@@ -10,8 +10,9 @@
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
     </padding>
-    <Button fx:id="exitButton" onAction="#handleExitAction" prefHeight="64.0" prefWidth="171.0" text="Exit" GridPane.columnIndex="1" GridPane.rowIndex="19" />
-   <Button mnemonicParsing="false" onAction="#makeComplaint" prefHeight="26.0" prefWidth="166.0" text="Make a Complaint" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <Button fx:id="exitButton" onAction="#handleExitAction" prefHeight="64.0" prefWidth="171.0" text="Exit" GridPane.columnIndex="1" GridPane.rowIndex="21" />
+   <Button mnemonicParsing="false" onAction="#checkProfile" prefHeight="25.0" prefWidth="171.0" text="Profile info" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+   <Button mnemonicParsing="false" onAction="#makeComplaint" prefHeight="25.0" prefWidth="170.0" text="Make a Complaint" GridPane.columnIndex="1" GridPane.rowIndex="7" />
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints />
@@ -40,6 +41,9 @@
         <RowConstraints />
         <RowConstraints />
         <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
