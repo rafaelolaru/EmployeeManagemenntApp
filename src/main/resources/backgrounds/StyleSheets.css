@@ -1,0 +1,29 @@
+.login{
+    -fx-background-image: url("images/register.jpg");
+    -fx-background-size: 120% 100%;
+}
+.code{
+    -fx-background-image: url("images/code_background.jpg");
+    -fx-background-position: center;
+    -fx-background-size: 100% 100%;
+}
+.menu{
+    -fx-background-image: url("images/menu_background.jpg");
+    -fx-background-size: 100% 125%;
+}
+.browser{
+    -fx-background-image: url("images/lists_background.jpg");
+    -fx-background-size: 100% 100%;
+}
+.make_com{
+    -fx-background-image: url("images/make_com.jpg");
+    -fx-background-size: 100% 100%;
+}
+.check_com{
+    -fx-background-image: url("images/checkComplaints.jpg");
+    -fx-background-size: 100% 100%;
+}
+.transaction{
+    -fx-background-image: url("images/transactionsBackground.jpg");
+    -fx-background-size: 100% 100%;
+}

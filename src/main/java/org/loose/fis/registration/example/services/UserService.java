@@ -4,10 +4,12 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.collections.ObservableList;
 import org.apache.commons.io.FileUtils;
+import org.loose.fis.registration.example.complaints.Complaints;
 import org.loose.fis.registration.example.exceptions.CouldNotWriteUsersException;
 import org.loose.fis.registration.example.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.registration.example.model.User;
 
+import javax.jws.soap.SOAPBinding;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -48,6 +50,13 @@ public class UserService {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExistsException(username);
         }
+    }
+    public static User checkAdmin(String code) {
+        for (User user : users) {
+            if (Objects.equals("Admin", user.getRole()) && Objects.equals(code, user.getCode()))
+               return user;
+        }
+        return null;
     }
     public static boolean checkPasswordForUser(String username,String password){
         password=encodePassword(username,password);
@@ -129,6 +138,35 @@ public class UserService {
                 user.setCode(userCode.getCode());
         }
         persistUsers();
+    }
+
+    public static ArrayList getComplaints(String code){
+        String role="Client";
+        ArrayList complaintList=new ArrayList(users.size());
+        for(User user : users){
+            if(role.equals(user.getRole())&&code.equals(user.getCode())&&(user.complaints!=null))
+                complaintList.add(user.getFull_name());
+        }
+        Collections.sort(complaintList);
+        return complaintList;
+    }
+    public static void setComplaints(User selectedUser, Complaints complaints){
+        for(User user: users){
+            if(user.equals(selectedUser)) {
+                user.setComplaints(complaints);
+                persistUsers();
+            }
+        }
+    }
+    public static void setUserValues(User newUser)
+    {
+        for(User user:users){
+            if(newUser.getUsername().equals(user.getUsername())){
+                user.setSalary(newUser.getSalary());
+                user.setHours(newUser.getHours());
+                persistUsers();
+            }
+        }
     }
 
 

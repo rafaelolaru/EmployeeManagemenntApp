@@ -1,5 +1,7 @@
 package org.loose.fis.registration.example.model;
 
+import org.loose.fis.registration.example.complaints.Complaints;
+
 public class User {
 
     private String username;
@@ -7,8 +9,10 @@ public class User {
     private String role;
     private String full_name;
     private String phone;
+    public Complaints complaints;
     private int salary=0,hours=0;
     private String code=null;
+
 
     public User() {
     }
@@ -63,18 +67,26 @@ public class User {
         this.phone = phone;
     }
 
-    public int getSalary(){return salary;}
-
-    public void setSalary(int salary){this.salary=salary;}
-
-    public int getHours(){return hours;}
-
-    public void setHours(int hours){this.hours=hours;}
-
     public String getCode(){return code;}
 
     public void setCode(String code){this.code=code;}
 
+    public Complaints getComplaints(){return complaints;}
+    public void setComplaints(Complaints complaints){this.complaints=complaints;}
+
+    public int getSalary(){return salary;}
+    public void setSalary(int salary){
+        this.salary=salary;
+    }
+
+    public void setHours(int hours){
+        this.hours=hours;
+    }
+    public int getHours(){return hours;}
+
+    public void addHours(int newHours){
+        this.hours=this.hours+newHours;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -106,7 +118,9 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", salary='" + salary + '\'' +
                 ", hours='" + hours + '\'' +
+                ", complaints='" + complaints.toString() + '\'' +
                 ", code='" + code + '\'' +
                 '}';
+
     }
 }

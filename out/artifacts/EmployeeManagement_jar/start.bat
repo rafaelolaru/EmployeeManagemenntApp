@@ -1,0 +1,1 @@
+start javaw -jar simple-registration-example.jar -nogui

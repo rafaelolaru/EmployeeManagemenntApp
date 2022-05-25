@@ -2,6 +2,7 @@ package org.loose.fis.registration.example.controllers;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,19 +10,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.collections.FXCollections;
 import org.loose.fis.registration.example.model.User;
 import org.loose.fis.registration.example.services.UserService;
-import javafx.collections.FXCollections;
-
-import javax.swing.table.TableColumn;
-import java.awt.*;
-import java.util.ArrayList;
 
 public class BrowserController extends AdminMenuController{
 
@@ -39,6 +32,8 @@ public class BrowserController extends AdminMenuController{
     @FXML
     private ListView listField;
 
+    public static User client;
+    public static String type;
 
     @FXML
     public void initialize()
@@ -50,7 +45,7 @@ public class BrowserController extends AdminMenuController{
         listField.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                User client=UserService.checkUserFullName(listField.getSelectionModel().getSelectedItem().toString());
+                client=UserService.checkUserFullName(listField.getSelectionModel().getSelectedItem().toString());
                 usernameMessage.setText(client.getUsername());
                 nameMessage.setText(client.getFull_name());
                 phoneMessage.setText(client.getPhone());
@@ -58,7 +53,6 @@ public class BrowserController extends AdminMenuController{
                 salaryMessage.setText(String.valueOf(client.getSalary()));
             }
         });
-
     }
     @FXML
     public void handleGoBackAction(javafx.event.ActionEvent actionEvent){
@@ -68,12 +62,42 @@ public class BrowserController extends AdminMenuController{
             Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e1) {
+            e1.printStackTrace();
         }
     }
 
+    @FXML
+    public void handleSalaryAction(javafx.event.ActionEvent actionEvent){
+        this.type="Salary";
+        if(client!=null) {
+            try {
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("browse_change.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (Exception t1) {
+                t1.printStackTrace();
+            }
+        }
+    }
 
+    @FXML
+    public void handleHoursAction(javafx.event.ActionEvent actionEvent){
+        this.type="Hours";
+        if(client!=null) {
+            try {
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("browse_change.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (Exception t2) {
+                t2.printStackTrace();
+            }
+        }
+    }
 
 
 }
