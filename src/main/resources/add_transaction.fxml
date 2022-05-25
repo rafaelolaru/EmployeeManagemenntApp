@@ -27,6 +27,7 @@
             <Button layoutX="136.0" layoutY="249.0" mnemonicParsing="false" onAction="#handleAddTransaction" prefHeight="30.0" prefWidth="133.0" text="Add Transaction" />
             <TextField fx:id="monthTF" layoutX="311.0" layoutY="168.0" prefHeight="26.0" prefWidth="94.0" promptText="Month" />
             <CheckBox fx:id="salaryCheckBox" layoutX="152.0" layoutY="211.0" mnemonicParsing="false" text="Salary" />
+            <Button layoutX="337.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleGoBackAction" text="Back" />
          </children>
       </AnchorPane>
    </children>
