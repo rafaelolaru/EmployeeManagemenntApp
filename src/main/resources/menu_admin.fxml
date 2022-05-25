@@ -11,13 +11,19 @@
     <padding>
         <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
     </padding>
-    <Button fx:id="exitButton" onAction="#handleExitAction" prefHeight="64.0" prefWidth="160.0" text="Exit" GridPane.columnIndex="1" GridPane.rowIndex="23" />
+    <Button fx:id="exitButton" onAction="#handleExitAction" prefHeight="64.0" prefWidth="160.0" text="Exit" GridPane.columnIndex="1" GridPane.rowIndex="24" />
    <Button fx:id="browseButton" onAction="#handleBrowseAction" prefHeight="64.0" prefWidth="160.0" text="Browse Employees" GridPane.columnIndex="1" GridPane.rowIndex="9">
       <font>
          <Font size="14.0" />
       </font>
    </Button>
-   <Button mnemonicParsing="false" onAction="#checkComplaints" prefHeight="60.0" prefWidth="160.0" text="Check Complaints" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+   <Button mnemonicParsing="false" onAction="#checkComplaints" prefHeight="64.0" prefWidth="160.0" text="Check Complaints" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+   <Button fx:id="addTransactionButton" onAction="#handleAddTransactionAction" prefHeight="64.0" prefWidth="160.0" text="Add Transaction" GridPane.columnIndex="1" GridPane.rowIndex="13">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Button>
+   <Button mnemonicParsing="false" onAction="#handleGetPaymentsAction" prefHeight="64.0" prefWidth="160.0" text="Get Payments" GridPane.columnIndex="1" GridPane.rowIndex="16" />
 
     <columnConstraints>
         <ColumnConstraints />
@@ -45,6 +51,13 @@
         <RowConstraints />
         <RowConstraints />
         <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />

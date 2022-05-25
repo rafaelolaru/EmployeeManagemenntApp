@@ -1,46 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.DropdownButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-
-<GridPane alignment="center" hgap="10" prefHeight="300.0" prefWidth="350.0" vgap="10" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.registration.example.controllers.LogInController">
+<GridPane alignment="center" hgap="10" prefHeight="400.0" prefWidth="565.0" styleClass="transaction" stylesheets="@backgrounds/StyleSheets.css" vgap="10" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.registration.example.controllers.TransactionMenuController">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints />
+      <RowConstraints maxHeight="700.0" prefHeight="700.0" />
    </rowConstraints>
    <children>
-      <AnchorPane prefHeight="300.0" prefWidth="350.0">
+      <AnchorPane prefHeight="391.0" prefWidth="431.0">
          <children>
-            <Label layoutX="128.0" layoutY="65.0" prefHeight="18.0" prefWidth="94.0" text="Add a transaction" />
-            <TextField layoutX="174.0" layoutY="94.0" prefHeight="26.0" prefWidth="94.0" />
-            <TextField layoutX="174.0" layoutY="137.0" prefHeight="26.0" prefWidth="94.0" />
-            <Label layoutX="34.0" layoutY="98.0" prefHeight="18.0" prefWidth="94.0" text="Transaction sum" />
-            <Label layoutX="34.0" layoutY="141.0" prefHeight="18.0" prefWidth="94.0" text="Transaction Date" />
-            <DropdownButton layoutX="268.0" layoutY="163.0">
-                <items>
-                    <MenuItem text="Ianuarie" />
-                    <MenuItem text="Februarie" />
-                    <MenuItem text="Martie" />
-                  <MenuItem text="Aprilie" />
-                  <MenuItem text="Mai" />
-                  <MenuItem text="Iunie" />
-                  <MenuItem text="Iulie" />
-                  <MenuItem text="August" />
-                  <MenuItem text="Septembrie" />
-                  <MenuItem text="Octombrie" />
-                  <MenuItem text="Noiembrie" />
-                  <MenuItem text="Decembrie" />
-                </items>
-            </DropdownButton>
+            <Label layoutX="135.0" layoutY="43.0" prefHeight="27.0" prefWidth="184.0" text="Add a transaction">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <TextField fx:id="sumTF" layoutX="186.0" layoutY="114.0" prefHeight="26.0" prefWidth="94.0" />
+            <TextField fx:id="dayTF" layoutX="186.0" layoutY="168.0" prefHeight="26.0" prefWidth="94.0" promptText="Day" />
+            <Label layoutX="18.0" layoutY="118.0" prefHeight="27.0" prefWidth="154.0" text="Transaction sum">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label layoutX="18.0" layoutY="172.0" prefHeight="27.0" prefWidth="154.0" text="Transaction Date">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Button layoutX="136.0" layoutY="249.0" mnemonicParsing="false" onAction="#handleAddTransaction" prefHeight="30.0" prefWidth="133.0" text="Add Transaction" />
+            <TextField fx:id="monthTF" layoutX="311.0" layoutY="168.0" prefHeight="26.0" prefWidth="94.0" promptText="Month" />
+            <CheckBox fx:id="salaryCheckBox" layoutX="152.0" layoutY="211.0" mnemonicParsing="false" text="Salary" />
+            <Button layoutX="337.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleGoBackAction" text="Back" />
          </children>
       </AnchorPane>
    </children>

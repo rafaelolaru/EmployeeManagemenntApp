@@ -2,6 +2,7 @@ package org.loose.fis.registration.example.controllers;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,7 +53,6 @@ public class BrowserController extends AdminMenuController{
                 salaryMessage.setText(String.valueOf(client.getSalary()));
             }
         });
-
     }
     @FXML
     public void handleGoBackAction(javafx.event.ActionEvent actionEvent){
@@ -62,8 +62,8 @@ public class BrowserController extends AdminMenuController{
             Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e1) {
+            e1.printStackTrace();
         }
     }
 
@@ -72,7 +72,7 @@ public class BrowserController extends AdminMenuController{
         this.type="Salary";
         if(client!=null) {
             try {
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Browse_change.fxml"));
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("browse_change.fxml"));
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(scene);
@@ -88,7 +88,7 @@ public class BrowserController extends AdminMenuController{
         this.type="Hours";
         if(client!=null) {
             try {
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Browse_change.fxml"));
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("browse_change.fxml"));
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                 stage.setScene(scene);

@@ -143,11 +143,11 @@
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Text fx:id="hoursMessage" wrappingWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Text fx:id="hoursMessage" fill="RED" wrappingWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Text fx:id="salaryMessage" wrappingWidth="192.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Text fx:id="salaryMessage" fill="RED" wrappingWidth="192.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font></Text>

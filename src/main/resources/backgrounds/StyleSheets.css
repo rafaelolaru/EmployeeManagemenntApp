@@ -23,3 +23,7 @@
     -fx-background-image: url("images/checkComplaints.jpg");
     -fx-background-size: 100% 100%;
 }
+.transaction{
+    -fx-background-image: url("images/transactionsBackground.jpg");
+    -fx-background-size: 100% 100%;
+}
