@@ -20,6 +20,18 @@ public class ClientMenuController {
             exc.printStackTrace();
         }
     }
+    @FXML
+    public void checkProfile(javafx.event.ActionEvent actionEvent){
+        try {
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("profile.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception exc) {
+            exc.printStackTrace();
+        }
+    }
 
 
     @FXML
