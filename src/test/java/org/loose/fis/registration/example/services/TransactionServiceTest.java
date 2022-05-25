@@ -49,8 +49,8 @@ public class TransactionServiceTest extends TestCase {
     public void testAddOneTransaction() throws Exception {
         TransactionService.loadTransactionsFromFile();
         TransactionService.addTransaction(TEST_TRANSACTIONS[0]);
-        assertNotNull(UserService.users);
-        assertEquals(1, UserService.users.size());
+        assertNotNull(TransactionService.transactions);
+        assertEquals(1, TransactionService.transactions.size());
     }
 
     @Test
@@ -58,13 +58,13 @@ public class TransactionServiceTest extends TestCase {
         TransactionService.loadTransactionsFromFile();
         TransactionService.addTransaction(TEST_TRANSACTIONS[0]);
         TransactionService.addTransaction(TEST_TRANSACTIONS[1]);
-        assertNotNull(UserService.users);
-        assertEquals(2, UserService.users.size());
+        assertNotNull(TransactionService.transactions);
+        assertEquals(2, TransactionService.transactions.size());
     }
 
 
     @Test
-    public void testAddOneUserIsPersisted() throws Exception {
+    public void testAddOneTransactionIsPersisted() throws Exception {
         TransactionService.loadTransactionsFromFile();
         TransactionService.addTransaction(TEST_TRANSACTIONS[0]);
         List<Transaction> transactions = new ObjectMapper().readValue(TransactionService.TRANS_PATH.toFile(), new TypeReference<List<Transaction>>() {
@@ -74,14 +74,14 @@ public class TransactionServiceTest extends TestCase {
     }
 
     @Test
-    public void testAddTwoUserArePersisted() throws Exception {
+    public void testAddTwoTransactionArePersisted() throws Exception {
         TransactionService.loadTransactionsFromFile();
         TransactionService.addTransaction(TEST_TRANSACTIONS[0]);
         TransactionService.addTransaction(TEST_TRANSACTIONS[1]);
         List<Transaction> transactions = new ObjectMapper().readValue(TransactionService.TRANS_PATH.toFile(), new TypeReference<List<Transaction>>() {
         });
         assertNotNull(transactions);
-        assertEquals(1, transactions.size());
+        assertEquals(2, transactions.size());
     }
 
 

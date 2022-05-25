@@ -30,8 +30,7 @@ public class TransactionService {
             File file=new File(String.valueOf(TRANS_PATH.toFile()));
             FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("users.json"), TRANS_PATH.toFile());
         }
-
-        System.out.println(TRANS_PATH);//shows path for json
+        
 
         ObjectMapper objectMapper = new ObjectMapper();
 
